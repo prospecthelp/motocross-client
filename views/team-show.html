@@ -1,0 +1,68 @@
+<div class="team-show">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="ridersNew({teamId: vm.team._id})">Create Rider</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>Team {{vm.team.team}}</h2>
+    </div>
+
+    <div class="success" ng-show="vm.success.message">
+      <p>{{vm.success.message}}</p>
+    </div>
+
+    <div class="content">
+      <div class="team">
+        <div class="info">
+          <div class="properties">
+            <p>Name</p>
+            <p>{{vm.team.team}}</p>
+          </div>
+
+          <div class="properties">
+            <p>Manager</p>
+            <p>{{vm.team.manager}}</p>
+          </div>
+
+          <div class="properties">
+            <p>Manufacturer</p>
+            <p>{{vm.team.manufacturer}}</p>
+          </div>
+        </div>
+
+        <div class="riders">
+          <div class="card" ng-repeat="rider in vm.team.riders">
+            <div class="card-image">
+              <span class="fas fa-user"></span>
+            </div>
+
+            <div class="card-info">
+              <h3>{{rider.rider}}</h3>
+
+              <div class="data">
+                <p>{{rider.number}}</p>
+                <p>{{rider.country}}</p>
+              </div>
+            </div>
+
+            <div class="card-button">
+              <a ui-sref="riderShow({teamId: vm.team._id, id: rider._id})">Show rider</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crud">
+      <a ui-sref="teamEdit({id: vm.team._id})">Edit team</a>
+      <a href="#" ng-click="vm.destroy()">Delete team</a>
+    </div>
+
+    <div class="back">
+      <a ui-sref="teamsIndex">&larr; Back to Teams</a>
+    </div>
+  </div>
+</div>

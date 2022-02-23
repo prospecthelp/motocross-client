@@ -1,0 +1,55 @@
+<div class="riders-new">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="teamShow({id: vm.teamId})">Back to team</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>RIDER REGISTRATION</h2>
+    </div>
+
+    <div class="error" ng-show="vm.error.message">
+      <h3>{{vm.error._message}}</h3>
+
+      <ul>
+        <li ng-repeat="error in vm.error.errors">{{error.message}}</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="form">
+        <form>
+          <div class="row">
+            <label for="name">Name</label>
+            <input type="text" id="name" ng-model="vm.rider.rider">
+          </div>
+
+          <div class="row">
+            <label for="number">Number</label>
+            <input type="text" id="number" ng-model="vm.rider.number">
+          </div>
+
+          <div class="row">
+            <label for="country">Country</label>
+            <input type="text" id="country" ng-model="vm.rider.country">
+          </div>
+
+          <div class="row">
+            <label for="mechanic">Mechanic</label>
+            <input type="text" id="mechanic" ng-model="vm.rider.mechanic">
+          </div>
+
+          <div class="row">
+            <button type="button" ng-click="vm.create()">Create rider</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="back">
+      <a ui-sref="teamShow({id: vm.teamId})">&larr; Back to team</a>
+    </div>
+  </div>
+</div>

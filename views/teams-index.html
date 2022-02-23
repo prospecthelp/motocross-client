@@ -1,0 +1,39 @@
+<div class="teams-index">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="teamsNew">Create team</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>PRO MOTOCROSS TEAMS</h2>
+    </div>
+
+    <div class="success" ng-show="vm.success.message">
+      <p>{{vm.success.message}}</p>
+    </div>
+
+    <div class="content">
+      <div class="teams">
+        <div class="card" ng-repeat="team in vm.teams">
+          <div class="card-image">
+            <span class="fas fa-motorcycle"></span>
+          </div>
+
+          <div class="card-info">
+            <h3>{{team.team}}</h3>
+
+            <ul>
+              <li ng-repeat="rider in team.riders">{{rider.rider}}</li>
+            </ul>
+          </div>
+
+          <div class="card-button">
+            <a ui-sref="teamShow({id: team._id})">Show team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

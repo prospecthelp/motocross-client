@@ -1,0 +1,50 @@
+<div class="teams-new">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="teamsIndex">Back to Teams</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>TEAM REGISTRATION</h2>
+    </div>
+
+    <div class="error" ng-show="vm.error.message">
+      <h3>{{vm.error._message}}!</h3>
+
+      <ul>
+        <li ng-repeat="error in vm.error.errors">{{error.message}}</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="form">
+        <form>
+          <div class="row">
+            <label for="name">Name</label>
+            <input type="text" id="name" ng-model="vm.team.team">
+          </div>
+
+          <div class="row">
+            <label for="mamager">Manager</label>
+            <input type="text" id="mamager" ng-model="vm.team.manager">
+          </div>
+
+          <div class="row">
+            <label for="manufacturer">Manufacturer</label>
+            <input type="text" id="manufacturer" ng-model="vm.team.manufacturer">
+          </div>
+
+          <div class="row">
+            <button type="button" ng-click="vm.create()">Create team</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="back">
+      <a ui-sref="teamsIndex">&larr; Back to Teams</a>
+    </div>
+  </div>
+</div>

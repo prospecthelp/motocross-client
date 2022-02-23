@@ -1,0 +1,59 @@
+<div class="team-show">
+  <div class="menu">
+    <ul>
+      <li><a ui-sref="teamShow({id: vm.teamId})">Back to team</a></li>
+    </ul>
+  </div>
+
+  <div class="article">
+    <div class="title">
+      <h2>Rider {{vm.rider.rider}}</h2>
+    </div>
+
+    <div class="success" ng-show="vm.success.message">
+      <p>{{vm.success.message}}</p>
+    </div>
+
+    <div class="content">
+      <div class="rider">
+        <div class="info">
+          <div class="properties">
+            <p>Name</p>
+            <p>{{vm.rider.rider}}</p>
+          </div>
+
+          <div class="properties">
+            <p>Number</p>
+            <p>{{vm.rider.number}}</p>
+          </div>
+
+          <div class="properties">
+            <p>Country</p>
+            <p>{{vm.rider.country}}</p>
+          </div>
+
+          <div class="properties">
+            <p>Mechanic</p>
+            <p>{{vm.rider.mechanic}}</p>
+          </div>
+        </div>
+
+        <div class="action">
+          <div class="set">
+            <span class="fas fa-motorcycle"></span>
+            <span class="fas fa-male"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crud">
+      <a ui-sref="riderEdit({teamId: vm.teamId, id: vm.rider._id})">Edit rider</a>
+      <a href="#" ng-click="vm.destroy()">Delete rider</a>
+    </div>
+
+    <div class="back">
+      <a ui-sref="teamShow({id: vm.teamId})">&larr; Back to team</a>
+    </div>
+  </div>
+</div>
